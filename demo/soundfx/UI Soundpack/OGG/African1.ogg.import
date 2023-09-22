@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8myo7y54o1p3"
+path="res://.godot/imported/African1.ogg-b6f061b9bb44205d3e336de1c1c07876.oggvorbisstr"
+
+[deps]
+
+source_file="res://soundfx/UI Soundpack/OGG/African1.ogg"
+dest_files=["res://.godot/imported/African1.ogg-b6f061b9bb44205d3e336de1c1c07876.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

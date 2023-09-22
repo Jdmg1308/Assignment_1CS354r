@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjsnwc2vttndf"]
+
+[ext_resource type="PackedScene" uid="uid://cbe8u4kjtjo4m" path="res://wall.tscn" id="1_5gwf5"]
+[ext_resource type="Script" path="res://raycast.cs" id="1_yk5mi"]
+[ext_resource type="PackedScene" uid="uid://dswrvcyxxpc01" path="res://ball.tscn" id="2_iiheq"]
+
+[node name="Main" type="Node"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 27.8271, 50.4512, 1.76872)
+current = true
+metadata/_edit_group_ = true
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 2.98023e-08, 0, 2.98023e-08, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
+target_position = Vector3(-0.607, -0.793, 0.049)
+collide_with_areas = true
+script = ExtResource("1_yk5mi")
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="Wall" parent="Room" instance=ExtResource("1_5gwf5")]
+normal_y = 1.0
+
+[node name="Wall2" parent="Room" instance=ExtResource("1_5gwf5")]
+normal_x = -1.0
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 21, 21, 0)
+visible = false
+
+[node name="Wall3" parent="Room" instance=ExtResource("1_5gwf5")]
+normal_z = -1.0
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 21, 21)
+
+[node name="Wall4" parent="Room" instance=ExtResource("1_5gwf5")]
+normal_z = 1.0
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 21, -21)
+
+[node name="Wall5" parent="Room" instance=ExtResource("1_5gwf5")]
+normal_x = 1.0
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -21, 21, 0)
+
+[node name="Wall6" parent="Room" instance=ExtResource("1_5gwf5")]
+normal_y = -1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42, 0)
+visible = false
+
+[node name="Balls" type="Node3D" parent="."]
+
+[node name="Ball" parent="Balls" instance=ExtResource("2_iiheq")]
+speed = 8.0
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 1.35759, 5.44781, 0.789421)
+
+[node name="Ball2" parent="Balls" instance=ExtResource("2_iiheq")]
+speed = 5.0
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 11.4721, 24.1202, 17.7633)
+
+[node name="Ball3" parent="Balls" instance=ExtResource("2_iiheq")]
+speed = 13.0
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 11.6318, 25.8525, 28.8851)
